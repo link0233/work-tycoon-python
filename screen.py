@@ -1,9 +1,13 @@
 import pygame
+from script.Task import *
 
 class screen:
     def __init__(self,width=1280,height=960):
         pygame.init()
         self.screen = pygame.display.set_mode((width,height))
+
+        self.task = task()
+
         self.gameloop()
         
     def gameloop(self):
@@ -20,3 +24,4 @@ class screen:
 
     def draw(self):
         self.screen.fill((42, 19, 0))
+        self.screen = self.task.draw(self.screen)
