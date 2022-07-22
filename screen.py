@@ -1,6 +1,7 @@
 import pygame
-from gui.Task.Task import *
-from sprite.getTaskDesk.script import *
+from script.Task import *
+from script.taskdesk import *
+from script.desk import *
 
 class screen:
     def __init__(self,width=1280,height=960):
@@ -9,6 +10,7 @@ class screen:
 
         self.task = task()
         self.getTaskDesk = getTeskDesk()
+        self.desk = Desk()
 
         self.gameloop()
         
@@ -31,8 +33,10 @@ class screen:
                     print(self.mousebutton)
 
         self.getTaskDesk.update(self.mousebutton)
+        self.desk.update(self.getTaskDesk.desk.posy)
 
     def draw(self):
         self.screen.fill((42, 19, 0))
         self.screen = self.getTaskDesk.draw(self.screen)
+        self.screen = self.desk.draw(self.screen)
         self.screen = self.task.draw(self.screen)
