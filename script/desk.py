@@ -10,6 +10,11 @@ class Desk:
         self.create_desk()
         self.create_desk()
         self.create_desk()
+        self.create_desk()
+        self.create_desk()
+        self.create_desk()
+        self.create_desk()
+        self.create_desk()
 
     def create_desk(self):
         newdesk = desk(self.andpos)
@@ -25,9 +30,11 @@ class Desk:
     def draw(self,screen):
         for d in self.desk:
             screen = d.draw(screen)
+            screen = d.people.draw(screen)
 
         return screen
 
     def update(self,posy):
         for d in self.desk:
             screen = d.update(posy)
+            d.people.update(d)
