@@ -4,7 +4,7 @@ from config import *
 class getTeskDeskDesk(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface((870,120))
+        self.image = pygame.Surface((2000,120))
         self.image.fill(YELLOW)
         self.rect = self.image.get_rect()
         self.rect.centerx = SCREENSIZE[0]//2

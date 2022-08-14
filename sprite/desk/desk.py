@@ -6,7 +6,7 @@ from sprite.desk.people import *
 class desk(pygame.sprite.Sprite):
     def __init__(self,pos):
         pygame.sprite.Sprite.__init__(self)
-        self.size = (SCREENSIZE[0]//5-60,60)
+        self.size = (SCREENSIZE[0]//4-120,60)
         self.image = pygame.Surface(self.size)
         self.image.fill(WHITE)
         self.rect = self.image.get_rect()
@@ -16,6 +16,7 @@ class desk(pygame.sprite.Sprite):
         self.group = pygame.sprite.Group()
 
         self.people = Desk_people(self)
+        self.deskPos = pos
 
         self.group.add(self)
 
